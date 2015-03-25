@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Traffic game.</title>
+    <link rel="stylesheet" href="game.css">
+  </head>
+  <body>
+    <h1>Traffic</h1>
+    <p>
+      Move the mouse to move the red car.
+      The goal is to touch the black box with the red car without accidents.<br/>
+      If the red car is hit, the game is over and you loose. <br/>
+      If the red car isn't hit and you touch the black box, the game is over and you win. <br/>
+    </p>
+    <p>
+      <span class="label" id="end">Status</span>
+      <span class="label" id="win">Status</span>
+    </p>
+    <canvas id="canvas" width="600" height="480"></canvas>
+    <img id="truck" src="img/truck.jpg" ></img>
+    <img id="redcar" src="img/redcar.jpg" ></img>
+    <button id="play" class="button">Play</button>
+    <select id="difficulty">
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Expert</option>
+    </select> difficulty
+    <script type="application/dart" src="game.dart"></script>
+  </body>
+</html>
