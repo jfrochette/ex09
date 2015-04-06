@@ -14,7 +14,7 @@ abstract class Car extends MovablePiece {
 class Truck extends Car {
 
   Truck(int id): super(id) {
-    color = 'green';
+    color.main = 'green';
     speed = Speed.random();
     //shape = PieceShape.IMG();
     //imgId = 'truck';
@@ -23,9 +23,9 @@ class Truck extends Car {
 
 
 class RedCar extends Car {
- 
+
   RedCar(int id): super(id) {
-    color = "red";
+    color.main = "red";
     //shape = PieceShape.IMG();
     //imgId = 'redcar';
   }
@@ -51,9 +51,9 @@ class Game extends Piece {
   static const defaultY = 50;
   static const defaultWidth = 32;
   static const defaultHeight = 480;
-  
+
   Game(int id): super(id) {
-     color = 'black';
+     color.main = 'black';
      x = defaultX;
      y = defaultY;
      width = defaultWidth;

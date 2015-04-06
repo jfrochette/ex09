@@ -1,0 +1,57 @@
+ex09
+
+37/40
+
+(-1)
+attention au formatage
+voir https://www.dartlang.org/articles/style-guide/
+
+for (Truck car in cars) { : où finit-elle?
+if(!isGameOver){ : où finit-elle?
+ draw() {
+    clear();
+    bool isAccident = false;
+    for (Truck car in cars) {
+      if(!isGameOver){
+      car.move();
+      cars.avoidCollisions(car);
+      cars.forEach((car) {
+        if (redCar.hit(car)) {
+          isAccident= true;
+        }
+      });
+      drawPiece(car);
+    }
+    if (isAccident) {
+      isGameOver;
+      end.text = "Game Over !!";
+      init();
+
+    }
+      if (redCar.hit(won)) {
+      isGameOver;
+     win.text = "You win !!";
+      init();
+
+    }
+    drawPiece(redCar);
+    drawPiece(won);
+    }
+  }
+
+(-2)
+    <img id="truck" src="img/truck.jpg" ></img>
+    <img id="redcar" src="img/redcar.jpg" ></img>
+
+Failed to load resource: the server responded with a status of 404 (Not Found)
+  http://localhost:8080/img/truck.jpg
+Failed to load resource: the server responded with a status of 404 (Not Found)
+  http://localhost:8080/img/redcar.jpg
+Failed to load resource: the server responded with a status of 404 (Not Found)
+  http://localhost:8080/img/truck.jpg
+Failed to load resource: the server responded with a status of 404 (Not Found)
+  http://localhost:8080/img/redcar.jpg
+Failed to load resource: the server responded with a status of 404 (Not Found)
+  http://localhost:8080/img/truck.jpg
+Failed to load resource: the server responded with a status of 404 (Not Found)
+  http://localhost:8080/img/redcar.jpg

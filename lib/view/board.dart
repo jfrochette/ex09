@@ -1,23 +1,23 @@
 part of ex09;
 
 class Board extends Surface {
-  static const int carCount = 8; 
-  
+  static const int carCount = 8;
+
   Cars cars;
   RedCar redCar;
-  Size space;
+  Area space;
   Game won;
   bool isGameOver;
-  
+
   SpanElement end;
   SpanElement win;
-  
+
   SelectElement selectDifficulty;
 
   Board(CanvasElement canvas): super(canvas) {
     end = querySelector('#end');
     win = querySelector('#win');
-    
+
     clear();
     querySelector('#play').onClick.listen((e){
       init();
@@ -26,7 +26,7 @@ class Board extends Surface {
     selectDifficulty.value = 'Easy';
     selectDifficulty.onChange.listen((Event e) {
           setDifficulty();
-        });          
+        });
         document.onMouseMove.listen((MouseEvent e) {
           redCar.x = e.offset.x - redCar.width  / 2;
           redCar.y = e.offset.y - redCar.height / 2;
@@ -34,7 +34,7 @@ class Board extends Surface {
         });
         init();
       }
-  
+
   setDifficulty() {
       switch (selectDifficulty.value) {
         case 'Easy': won.box.position = new Position (won.box.x, won.box.y); break;
@@ -42,10 +42,10 @@ class Board extends Surface {
         case 'Expert': won.box.position = new Position (won.box.x, 400);
       }
     }
-    
+
   init(){
       isGameOver = false;
-      space = new Size(width, height);
+      space = new Area(width, height);
       cars = new Cars(carCount);
       cars.forEach((Car car) {
          car.space = space;
@@ -54,13 +54,13 @@ class Board extends Surface {
       redCar = cars.redCar;
       redCar.space = space;
       redCar.box.position = new Position (0 , 240);
-           
+
       won = cars.won;
-      won.space = space; 
-      setDifficulty(); 
+      won.space = space;
+      setDifficulty();
   }
-   
- 
+
+
  draw() {
     clear();
     bool isAccident = false;
@@ -79,13 +79,13 @@ class Board extends Surface {
       isGameOver;
       end.text = "Game Over !!";
       init();
-      
+
     }
       if (redCar.hit(won)) {
       isGameOver;
      win.text = "You win !!";
       init();
-      
+
     }
     drawPiece(redCar);
     drawPiece(won);
